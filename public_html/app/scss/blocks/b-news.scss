@@ -1,0 +1,34 @@
+/* Новости */
+
+.b-news {
+    @media (max-width: 1199px) {
+        font-size: 0.85em;
+    }
+
+    & .swiper-wrapper {
+        align-items: stretch;
+    }
+
+    &__item {
+        height: auto;
+        border: 1px solid rgba(var(--color-primary-rgb), 0.5);
+        border-radius: var(--border-radius);
+        overflow: hidden;
+    }
+
+    &__body {
+        padding: 1em;
+    }
+
+    &__title {
+        margin: 0.25em 0 0.5em 0;
+    }
+
+    .swiper {
+        --swiper-pagination-bottom: -2em;
+
+        @media (min-width: 992px) {
+            --swiper-pagination-bullet-width: 0px;
+        }
+    }
+}

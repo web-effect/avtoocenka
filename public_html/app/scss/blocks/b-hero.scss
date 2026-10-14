@@ -1,0 +1,47 @@
+.b-hero {
+    &__slider {
+        border-radius: var(--border-radius);
+        overflow: hidden;
+        font-size: 0.85em;
+
+        @media (min-width: 576px) {
+            font-size: 1em;
+        }
+    }
+
+    &__img {
+        height: 350px;
+
+        @media (min-width: 576px) {
+            height: 400px;
+        }
+
+        img {
+            border-radius: var(--border-radius);
+            overflow: hidden;
+            width: 100%;
+            height: 100%;
+        }
+    }
+
+    &__content {
+        --container: 3em;
+        position: absolute;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        top: 0;
+        left: 0;
+        left: var(--container);
+        padding-right: var(--container);
+        height: 100%;
+    }
+
+    &__title {
+        margin-bottom: 0.5em;
+    }
+
+    &__text {
+        margin-bottom: 1em;
+    }
+}

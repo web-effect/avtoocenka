@@ -1,0 +1,16 @@
+/*
+!.gitignore
+!.README.md
+
+!/public_html
+/public_html/*
+!/public_html/app
+!/public_html/app/*
+
+!/core
+/core/*
+!/core/app
+!/core/app/*
+
+!/core/config
+/core/config/config.inc.php

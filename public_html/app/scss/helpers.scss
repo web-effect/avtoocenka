@@ -1,0 +1,133 @@
+// === DISPLAY ===
+$displays: none, block, flex, grid;
+@each $d in $displays {
+    .#{$d} {
+        display: #{$d};
+    }
+}
+@each $d in $displays {
+    @include makeResponsive('#{$d}', display, $d);
+}
+
+
+// === SPACING ===
+$sizes: 5, 8, 10, 15, 20, 30, 40;
+@each $size in $sizes {
+    .gap-#{$size} {
+        gap: #{$size}px;
+    }
+    .mb-#{$size} {
+        margin-bottom: #{$size}px;
+    }
+    .mt-#{$size} {
+        margin-top: #{$size}px;
+    }
+    .p-#{$size} {
+        padding: #{$size}px;
+    }
+}
+@each $size in $sizes {
+    @include makeResponsive('gap-#{$size}', gap, #{$size}px);
+}
+.mb-0 {
+    margin-bottom: 0 !important;
+}
+
+
+// === GRID COLS ===
+$cols: 2, 3, 4, 5, 6;
+@each $c in $cols {
+    .grid-cols-#{$c} {
+        grid-template-columns: repeat($c, minmax(0, 1fr));
+    }
+    .col-span-#{$c} {
+        grid-column: span $c / span $c;
+    }
+}
+@each $c in $cols {
+    @include makeResponsive('grid-cols-#{$c}', grid-template-columns, repeat($c, minmax(0, 1fr)));
+    @include makeResponsive('col-span-#{$c}', grid-column, span $c / span $c);
+}
+
+
+// === FLEX PROPS ===
+.flex-row     { flex-direction: row; }
+.flex-col     { flex-direction: column; }
+.flex-wrap    { flex-wrap: wrap; }
+.flex-nowrap  { flex-wrap: nowrap; }
+.items-start  { align-items: flex-start; }
+.items-center { align-items: center; }
+.items-end    { align-items: flex-end; }
+.justify-start   { justify-content: flex-start; }
+.justify-center  { justify-content: center; }
+.justify-between { justify-content: space-between; }
+.justify-end     { justify-content: flex-end; }
+.content-center  { align-content: center; }
+.content-start   { align-content: flex-start; }
+.content-end     { align-content: end; }
+.flex-center-between {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+
+// === COLORS ===
+@each $name, $value in $colors {
+    .text-#{$name} {
+        color: var(--color-#{$name});
+    }
+    .bg-#{$name} {
+        background-color: var(--color-#{$name});
+    }
+}
+
+
+// === TEXT ===
+.font-light {
+    font-weight: 300;
+}
+.font-normal {
+    font-weight: 400;
+}
+.font-medium {
+    font-weight: 500;
+}
+.font-semibold {
+    font-weight: 600;
+}
+.font-bold {
+    font-weight: 700;
+}
+.text-center {
+    text-align: center;
+}
+.text-left {
+    text-align: left;
+}
+.text-right {
+    text-align: right;
+}
+.uppercase {
+    text-transform: uppercase;
+    letter-spacing: 0.03em;
+}
+.whitespace-nowrap {
+    white-space: nowrap;
+}
+
+.underline {
+    text-decoration-line: underline;
+}
+
+
+// === FONT SIZE ===
+$font-sizes: 12, 14, 15, 16, 18, 20, 24;
+@each $size in $font-sizes {
+    .text-#{$size} {
+        font-size: #{$size}px;
+    }
+}
+@each $size in $font-sizes {
+    @include makeResponsive('text-#{$size}', 'font-size', #{$size}px);
+}

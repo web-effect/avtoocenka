@@ -1,0 +1,103 @@
+.container {
+    width: 100%;
+    max-width: var(--container-width);
+    padding-right: var(--grid-gap);
+    padding-left: var(--grid-gap);
+    margin-right: auto;
+    margin-left: auto;
+}
+
+@each $key, $bp in $breakpoints {
+    @media (min-width: map-get($bp, min)) {
+        .container {
+            --container-width: calc(#{map-get($bp, container)} + var(--grid-gap) * 2);
+        }
+    }
+}
+
+// ???
+.main {
+    padding-bottom: 6rem;
+}
+
+.main-content {
+    margin-top: 3rem;
+}
+
+
+// сетка
+// .grid {
+//     --gap-y: var(--grid-gap);
+//     --gap-x: var(--grid-gap);
+//     --col: var(--columns);
+//     row-gap: var(--gap-y);
+
+//     &:not(.swiper) {
+//         display: flex;
+//         justify-content: center;
+//         flex-wrap: wrap;
+//         column-gap: var(--gap-x);
+//     }
+
+//     &>*:not(.swiper-wrapper) {
+//         flex-grow: 0;
+//         flex-shrink: 0;
+//         flex-basis: calc((100% / var(--col)) - (var(--gap-x) * (var(--col) - 1)) / var(--col));
+//     }
+//     & > *:not([class*="swiper-"]) {
+//        // flex-grow: 0;
+//        // flex-shrink: 0;
+//        // flex-basis: calc((100% / var(--col)) - (var(--gap-x) * (var(--col) - 1)) / var(--col));
+//     //    width: calc((100% / var(--col)) - (var(--gap-x) * (var(--col) - 1)) / var(--col));
+//    }
+// }
+
+
+// .columns {
+//     display: grid;
+//     gap: var(--grid-gap);
+
+//     @media (min-width: 992px) {
+//         grid-template-columns: repeat(auto-fit, minmax(0, 1fr));
+//     }
+// }
+
+
+.section {
+    padding-top: var(--section-padding);
+    padding-bottom: var(--section-padding);
+    background-position: 50% 50%;
+    background-size: cover;
+
+    &:first-of-type {
+        padding-top: calc(var(--section-padding) / 2);
+    }
+
+    // отступы между секциями без фона схлопываются
+    &:not([class*="bg-"])+&:not([class*="bg-"]) {
+        padding-top: 0;
+    }
+
+    &__header {
+        margin-bottom: var(--section-header-margin);
+    }
+
+    &__title {
+        margin: 0;
+    }
+}
+
+
+
+
+
+
+.hstack {
+    *+* {
+        margin-top: var(--gap);
+    }
+}
+
+.form-privacy-ref:hover{
+    opacity: 0.5;
+}

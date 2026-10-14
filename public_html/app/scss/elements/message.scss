@@ -1,0 +1,33 @@
+.message {
+    padding: 1rem 1.5rem;
+    border-radius: var(--border-radius);
+    color: #fff;
+    text-align: center;
+
+    &.is-danger,
+    &._danger {
+        background: var(--color-danger);
+    }
+
+    &.is-success,
+    &._success {
+        background: var(--color-success);
+    }
+
+    &._temporary {
+        overflow: hidden;
+        animation: hide 4s forwards;
+
+        @keyframes hide {
+            90% {
+                opacity: 1;
+            }
+            100% {
+                display: none;
+                opacity: 0;
+                //visibility: hidden;
+            }
+        }
+    }
+
+}

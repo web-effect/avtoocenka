@@ -1,0 +1,37 @@
+/* Отзывы */
+
+.b-reviews {
+    &__items {
+        @media (min-width: 991px) {
+            --columns: 3;
+        }
+
+        @media (max-width: 575px) {
+            --columns: 1;
+        }
+    }
+
+    .swiper-wrapper {
+        align-items: stretch;
+    }
+
+    &__item {
+        height: auto;
+        border: 1px solid rgba(var(--color-primary-rgb), 0.5);
+        border-radius: var(--border-radius);
+        overflow: hidden;
+        padding: var(--grid-gap);
+    }
+    &__text {
+        margin-top: 0.75rem;
+        line-height: 1.5;
+    }
+
+    .swiper {
+        --swiper-pagination-bottom: -2em;
+
+        @media (min-width: 992px) {
+            --swiper-pagination-bullet-width: 0px;
+        }
+    }
+}

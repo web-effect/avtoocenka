@@ -1,0 +1,191 @@
+/* 
+ * Яндекс карты
+ */
+.ya-map {
+    height: 400px;
+    border-radius: var(--border-radius);
+    overflow: hidden;
+    position: relative;
+
+    &.is-loading {
+        border: 1px solid var(--color-border);
+    }
+
+    &.is-loading::before {
+        background: var(--color-bg-light) !important;
+    }
+}
+.ymaps-2-1-79-gototech {
+        display: none!important;
+}
+.ymaps-2-1-79-copyright__link{
+    display: none!important;
+}
+
+.ymaps-2-1-79-gototaxi{
+    display: none!important;
+}
+.company_ref{
+    position: absolute;
+    z-index: 1000;
+    bottom: 37px;
+    left: 7px;
+}
+.ymaps__container {
+    display: -webkit-box;
+    -webkit-box-align: center;
+    display: -webkit-flex;
+    display: flex;
+    border-radius: 3px;
+    background-color: #fff;
+    cursor: pointer;
+    overflow: hidden;
+    white-space: nowrap;
+    height: 24px;
+    box-shadow: 0 1px 2px 1px rgba(0, 0, 0, .15), 0 2px 5px -3px rgba(0, 0, 0, .15);
+}
+.ymaps__pin{
+    height: 18px;
+    margin: auto 6px;
+    svg {
+        vertical-align: top;
+    }
+}
+.ymaps__text-container{
+    margin-right: 6px;
+    font-family: Arial;
+    font-size: 12px;
+    font-weight: 400;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    text-align: left;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: flex;
+}
+.ymaps__text {
+    margin: auto;
+    height: 24px;
+    line-height: 24px;
+    white-space: nowrap;
+    overflow: hidden;
+}
+
+
+/* 
+ * Alpine.js: скрываем элемент пока не загрузился
+ */
+[x-cloak] {
+    display: none;
+}
+
+
+/*
+ * Fancyapps
+ * у каруселей убирается пагинация с 1200px
+ */
+.fancybox__container {
+    --carousel-button-color: var(--color-text);
+    --carousel-button-svg-filter: none;
+    --fancybox-accent-color: var(--color-primary);
+    --fancybox-color: var(--color-text);
+    --fancybox-toolbar-text-shadow: none;
+}
+
+.fancybox__backdrop {
+    backdrop-filter: blur(0.75rem);
+    -webkit-backdrop-filter: blur(0.75rem);
+    background-color: rgba(255, 255, 255, 0.8);
+}
+
+.fancybox__toolbar {
+    background: transparent;
+}
+
+body:not(.is-using-mouse) .fancybox__container :focus {
+    box-shadow: none;
+}
+
+
+a[data-fancybox] img {
+    cursor: zoom-in;
+}
+
+.modal {
+    width: 1296px;
+    max-width: 100%;
+    border-radius: var(--border-radius);
+}
+
+.modal-form {
+    padding: 0 !important;
+    width: 516px;
+    max-width: 100%;
+    background: none !important;
+}
+
+
+/* 
+ * htmx + индикатор загрузки
+ */
+.htmx-swapping,
+.is-loading {
+    @extend %is-loading;
+
+    >* {
+        opacity: 0.2;
+        pointer-events: none !important;
+    }
+}
+
+%is-loading {
+    position: relative;
+
+    &::after {
+        @extend %spinner-border;
+        font-size: 3rem;
+    }
+}
+
+%spinner-border {
+    content: '';
+    z-index: 101;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    margin: auto;
+    width: 1.25em;
+    height: 1.25em;
+    border: 2px solid currentColor;
+    border-right-color: transparent;
+    border-radius: 50%;
+    animation: 1s linear infinite spinner-border;
+}
+
+@keyframes spinner-border {
+    to {
+        transform: rotate(360deg)
+    }
+}
+
+// simplesearch
+.simplesearch-results {
+    margin-top: -15px;
+}
+.simplesearch-paging {
+    display: flex;
+    align-items: center;
+
+    & .pagination-list {
+        margin-top: 0;
+    }
+    & .simplesearch-page {
+        margin-top: 0;
+        margin-bottom: 0;
+        list-style-type: none;
+    }
+}

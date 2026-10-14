@@ -1,0 +1,62 @@
+.sliderWrap {
+    position: relative;
+}
+
+.swiper {
+    position: static;
+    opacity: 0; // сначала скроем все слайдеры, покажем только после полной отрисовки
+    cursor: grab;
+
+
+    &:active {
+        cursor: grabbing;
+    }
+    &-button {
+         width: calc(1.75 * var(--swiper-navigation-size));
+         height: calc(1.75 * var(--swiper-navigation-size));
+         margin-top: calc(1.75 * var(--swiper-navigation-size) * -0.5);      
+         &-prev{
+            &::after{
+                margin-right: calc(0.1* var(--swiper-navigation-size));
+            }
+         }
+         &-next{
+            &::after{
+                margin-left: calc(0.1* var(--swiper-navigation-size));
+            }
+         }
+    }
+    &-button {
+        @media (max-width: 991px) {
+            display: none;
+        }
+
+        &::before {
+            content: var(--swiper-navigation-bg-arrow) "";
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+            width: 100%;
+            display: block;
+            height: 100%;
+            background: var(--color-bg);
+            border-radius: 50%;
+            z-index: -1;
+            box-shadow: 0 0 calc(var(--swiper-navigation-size) / 4) var(--swiper-navigation-color);
+        }
+        
+
+        &.svg {
+            &::after {
+                content: none;
+            }
+
+            &.swiper-button-prev {
+                transform: rotate(180deg);
+            }
+        }
+    }
+
+
+}

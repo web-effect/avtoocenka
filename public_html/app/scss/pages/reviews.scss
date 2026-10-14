@@ -1,0 +1,23 @@
+.p-reviews-item {
+    padding-bottom: 2rem;
+    @include desktop {
+        display: flex;
+    }
+}
+
+.p-reviews-item + .p-reviews-item {
+    padding-top: 2rem;
+    border-top: 1px solid var(--color-border);
+}
+
+.p-reviews-item-image {
+    display: block;
+    margin-top: 1rem;
+    @include desktop {
+        flex: none;
+        margin-top: 0;
+        margin-left: var(--gap);
+        width: 500px;
+        max-width: 50%;
+    }
+}

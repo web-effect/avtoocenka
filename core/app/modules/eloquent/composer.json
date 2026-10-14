@@ -1,0 +1,14 @@
+{
+    "require": {
+        "doctrine/dbal": "^3.2",
+        "illuminate/database": "^8.0"
+    },
+    "autoload": {
+        "files": [
+            "./bootstrap.php"
+        ],
+        "psr-4": {
+            "App\\Models\\": "../../db/models/"
+        }
+    }
+}

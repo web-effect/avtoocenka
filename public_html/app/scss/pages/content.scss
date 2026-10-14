@@ -1,0 +1,39 @@
+.content{
+    &__wrapper{
+        background-color: #F8F6F2;
+        padding: 24px;
+        border-radius: 20px;
+    }
+
+    .pagetitle{
+        font-family: Manrope;
+        font-weight: 600;
+        font-style: SemiBold;
+        font-size: 32px;
+        leading-trim: NONE;
+        line-height: 100%;
+        letter-spacing: 0%;
+        color: #151B2B;
+    }
+
+    @media screen and (max-width: 1400px){
+        .pagetitle{
+            font-size: 26px;
+        }
+    }
+
+    @media screen and (max-width: 576px){
+        &__container{
+            padding: 0px !important;
+        }
+
+        &__wrapper{
+            border-radius: 16px;
+            padding: 16px;
+        }
+
+        .pagetitle{
+            font-size: 22px;
+        }
+    }
+}

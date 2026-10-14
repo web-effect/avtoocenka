@@ -1,0 +1,74 @@
+/* карточка */
+.card {
+    --card-gap: 0.75rem;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    background-color: var(--color-bg);
+    border-radius: var(--border-radius);
+    box-shadow: 0 0 0 1px var(--color-border);
+    font-size: 0.85em;
+    overflow: hidden;
+
+    @media (min-width: 1200px) {
+        --card-gap: 1.5rem;
+    }
+
+    @media (min-width: 576px) {
+        font-size: 1em;
+    }
+
+
+    &__image {
+        text-align: center;
+        user-select: none;
+
+        img {
+            width: 100%;
+            border-top-left-radius: var(--border-radius);
+            border-top-right-radius: var(--border-radius);
+        }
+
+        &:only-child img {
+            border-radius: var(--border-radius);
+        }
+    }
+
+    &__body {
+        padding: 1.25rem var(--card-gap);
+    }
+
+    &__title {
+        font-weight: var(--font-bolder);
+    }
+
+    &__text {
+        margin-top: 0.5rem;
+    }
+
+    &__date {
+        display: flex;
+        align-items: center;
+        margin-top: -0.25rem;
+        margin-bottom: 0.5rem;
+        color: var(--color-text-muted);
+        font-size: 0.875rem;
+
+        svg {
+            margin-right: 0.5em;
+        }
+    }
+
+    &._hoverable {
+        transition: all 0.2s;
+    }
+
+}
+
+a.card:hover,
+.card._hoverable:hover {
+    box-shadow: var(--shadow);
+}
+.card .swiper-slide{
+    height: 100%;
+}

@@ -1,0 +1,136 @@
+.header-mobile{
+    position: fixed;
+    top: 0;
+    height: 100vh;
+    width: 320px;
+    max-width: calc(100% - 50px);
+    background-color: #F8F6F2;
+    left: -100%;
+    opacity: 0;
+    padding-top: 20px;
+    z-index: 100;
+
+    &__logo{
+        padding-left: 16px;
+        margin-bottom: 16px;
+    }
+
+    &__sitename{
+        color: #151B2B;
+    }
+
+    &__header-descriptor{
+        color: #151B2B;
+    }
+
+    &__title{
+        font-family: Manrope;
+        font-weight: 600;
+        font-style: SemiBold;
+        font-size: 24px;
+        leading-trim: NONE;
+        line-height: 100%;
+        letter-spacing: 0%;
+        margin-bottom: 16px;
+        padding-left: 16px;
+    }
+
+    &__column{
+        border-top: 1px solid #EBE3D8;
+        padding-top: 8px;
+        margin-top: 8px;
+
+        &:first-child{
+            padding-top: 0px;
+            margin-top: 0px;
+            border-top: none;
+        }
+    }
+
+    &__button{
+        border-radius: 10px;
+        font-family: Manrope;
+        font-weight: 700;
+        font-style: Bold;
+        font-size: 15px;
+        leading-trim: NONE;
+        line-height: 100%;
+        letter-spacing: 0%;
+        text-transform: uppercase;
+        color: #151B2B;
+        padding: 16px;
+        display: flex;
+        gap: 16px;
+        align-items: center;
+
+        svg{
+            fill: none;
+            width: 22px;
+            height: 22px;
+
+            path{
+                stroke: #151B2B;
+                stroke-width: 1.5 !important;
+            }
+        }
+
+        &:hover{
+            background-color: #EEEAE5;
+        }
+
+        &.active{
+            background-color: #EEEAE5;
+        }
+    }
+
+    &__contact{
+        border-radius: 10px;
+        font-family: Manrope;
+        font-weight: 700;
+        font-style: Bold;
+        font-size: 15px;
+        leading-trim: NONE;
+        line-height: 100%;
+        letter-spacing: 0%;
+        text-transform: uppercase;
+        color: #151B2B;
+        padding: 10px 16px;
+        border: none !important;
+        display: block;
+    }
+
+    &__socials{
+        padding: 10px 16px;
+        display: flex;
+        gap: 12px;
+        flex-wrap: wrap;
+    }
+
+    &__soc{
+        width: 32px;
+        height: 32px;
+
+        path{
+            fill: #151B2B;
+        }
+    }
+}
+
+.overlay{
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, .5);
+    opacity: 0;
+    visibility: hidden;
+    transition: .3s;
+    z-index: 99;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+
+    &.active{
+        opacity: 1;
+        visibility: visible;
+    }
+}

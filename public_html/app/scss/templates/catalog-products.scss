@@ -1,0 +1,308 @@
+.p-catalog-row._has-sidebar {
+    display: grid;
+    //gap: var(--gap);
+    gap: 0.75rem;
+    @media (min-width: 1200px) {
+        gap: 3rem;
+        grid-template-columns: calc(25% - 3rem) 1fr;
+    }
+}
+
+._has-sidebar .p-catalog-items {
+    display: grid;
+    grid-template-columns: repeat(var(--columns), 1fr);
+    column-gap: var(--gap-x);
+    row-gap: var(--gap-y);
+    
+    @media (min-width: 1200px) {
+        --columns: 3;
+    }
+
+    .pagination {
+        grid-column: span var(--columns);
+    }
+}
+
+/* фильтры по категориям */
+.p-products__categories {
+    display: flex;
+    flex-wrap: wrap;
+    margin: -0.5rem 0 var(--grid-gap);
+
+    li {
+        margin: 0.5rem 1rem 0 0;
+    }
+
+    .button {
+        min-width: 0;
+    }
+}
+
+/* sidebar */
+.catalog-filter {
+    @media (max-width: 1199px) {
+        display: none;
+        .is-expanded & {
+            display: block;
+            padding-top: 1.5rem;
+            padding-bottom: 1.5rem;
+        }
+    }
+}
+
+.catalog-filter-expand {
+    @media (min-width: 1200px) {
+        display: none !important;
+    }
+}
+
+.filter-section {
+    & + & {
+        margin-top: 1.75rem;
+    }
+}
+
+.filter-section-title {
+    margin-bottom: 0.85rem;
+}
+
+
+.filter-section-menu {
+    margin: -0.375rem 0;
+    line-height: 1.2;
+}
+
+.filter-section-menu-back,
+.filter-section-menu-link {
+    display: flex;
+    padding: 0.375rem 0.5rem;
+    &:hover {
+        color: var(--color-primary);
+    }
+}
+
+.filter-section-menu-back {
+    padding-left: 0;
+    svg {
+        margin-right: 0.5rem;
+    }
+}
+
+.filter-section-menu-link {
+    padding-left: 2.25rem;
+}
+
+.filter-section-menu-current {
+    margin: 0.375rem 0;
+    padding: 0.375rem 0.5rem;
+    padding-left: 1.5rem;
+    background-color: rgba(var(--color-primary-rgb), 0.1);
+}
+
+.filter-checkboxes-list {
+    @media (min-width: 576px) and (max-width: 1199px) {
+        display: grid;
+        grid-template-columns: auto auto;
+        gap: 0.75rem;
+        label {
+            margin: 0 !important;
+        }
+    }
+}
+
+/* ranger */
+
+.filter-ranger-inputs {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    margin-bottom: 0.75rem;
+    label:first-child {
+        margin-right: -1px;
+    }
+    label:first-child .input {
+        border-top-right-radius: 0;
+        border-bottom-right-radius: 0;
+    }
+    label:last-child .input {
+        border-top-left-radius: 0;
+        border-bottom-left-radius: 0;
+    }
+    .input:focus {
+        position: relative;
+    }
+}
+
+.filter-ranger .noUi-target {
+    background: rgba(0,0,0, .2);
+    border: none;
+    box-shadow: none;
+    cursor: pointer;
+}
+.filter-ranger .noUi-horizontal {
+    height: auto;
+}
+
+.filter-ranger .noUi-base,
+.filter-ranger .noUi-connects {
+    height: 4px;
+    margin: 0 0.5rem;
+    width: calc(100% - 1rem);
+    border-radius: 0;
+}
+
+.filter-ranger .noUi-connect {
+    background-color: var(--color-primary);
+}
+
+.filter-ranger  .noUi-target .noUi-handle {
+    display: flex;
+    justify-content: center; align-items: center;
+    width: 40px;
+    height: 40px;
+    right: -20px;
+    top: -18px;
+    box-shadow: none;
+    border: none;
+    background-color: transparent;
+    cursor: move;
+}
+.filter-ranger .noUi-handle::before {
+    width: 1rem; height: 1rem;
+    top: auto; right: auto; left: auto; bottom: auto;
+    background-color: var(--color-primary);
+    border-radius: 50%;
+    transition: box-shadow .15s;
+}
+
+.filter-ranger .noUi-active.noUi-handle::before {
+    box-shadow: 0 0 0 10px rgba(var(--color-primary-rgb), 0.2);
+}
+
+.filter-ranger .noUi-handle::after {
+    display: none;
+}
+
+/* сортировка */
+
+.p-catalog-sort {
+    width: fit-content;
+    position: relative;
+    margin-bottom: var(--grid-gap);
+
+    @media (min-width: 1200px){
+        &:hover &__toggle-wrapper {
+            opacity: 1;
+            transform: translateY(100%);
+            pointer-events: all;
+        }
+    }
+
+    @media (max-width: 1199px) {
+        &.is-expanded &__toggle-wrapper {
+            opacity: 1;
+            transform: translateY(100%);
+            pointer-events: all;
+        }
+    }
+    &__title, &__toggle {
+        width: fit-content;
+        max-width: 100vw;
+        overflow-x: auto;
+        box-shadow: var(--shadow);
+        border-radius: var(--border-radius);
+    }
+    &__title {
+        padding: 10px 20px;
+        font-weight: var(--font-weight-bolder);
+        cursor: pointer;
+    }
+    &__toggle {
+        white-space: nowrap;
+        padding: var(--grid-gap);
+        background-color: var(--color-bg);
+    }
+    &__toggle-wrapper {
+        padding-top: 10px;
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        z-index: 15;
+        transition: 0.2s all;
+
+        transform: translateY(calc(100% + 1rem));
+        opacity: 0;
+        pointer-events: none;
+    }
+}
+
+
+
+
+
+
+
+
+/* 
+// Старый вариант
+.p-catalog-sort {
+    display: flex;
+    align-items: center;
+    margin-bottom: var(--grid-gap);
+    overflow-x: auto;
+    label {
+        border-bottom: 1px dashed transparent;
+        color: var(--color-primary);
+        line-height: 1.35;
+        transition: all 0.2s;
+        &:hover {
+            border-bottom-color: currentColor;
+        }
+    }
+    input {
+        display: none;
+    }
+    > div {
+        display: flex;
+        align-items: center;
+        & + div {
+            margin-left: 1rem;
+        }
+
+        & input:checked + label {
+            border-bottom-color: currentColor;
+        }
+    }
+    > div:not(.p-catalog-sort-toggle) :checked + label {
+        color: var(--color-text);
+        pointer-events: none;
+    }
+}
+
+.p-catalog-sort-title {
+    font-weight: var(--font-weight-bolder);
+    // border-bottom: 1px dashed transparent;
+}
+
+.p-catalog-sort-toggle {
+    label {
+        display: none;
+        svg {
+            margin-left: 0.25rem;
+        }
+    }
+    :checked + * + label {
+        display: flex;
+        color: var(--color-text);
+        border-bottom-color: currentColor;
+    }
+    input:not(:checked) + input:not(:checked) {
+        & + label {
+            display: flex;
+        }
+        & ~ label svg {
+            display: none;
+        }
+    }
+}
+
+*/

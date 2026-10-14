@@ -1,0 +1,110 @@
+.prod-card {
+    @extend .card;
+    display: flex;
+    flex-direction: column;
+    min-width: 0;
+
+    &__body {
+        @extend .card__body;
+        display: grid;
+        flex-grow: 2;
+    }
+
+    &__title {
+        @extend .card__title;
+    }
+
+    &__badges {
+        position: absolute;
+        top: var(--card-gap);
+        left: var(--card-gap);
+        z-index: 10;
+        pointer-events: none;
+        display: flex;
+        flex-direction: column;
+        gap: 0.25em;
+    }
+
+    &__link {
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        right: 0;
+        left: 0;
+        width: 100%;
+    }
+
+    &__title {
+        margin-bottom: auto;
+        transition: all 0.2s;
+    }
+
+    &__price {
+        padding-top: 0.25rem;
+        margin-top: auto;
+    }
+
+    &__price-val {
+        font-size: 1.5rem;
+    }
+
+    &__footer {
+        padding: 0 var(--card-gap) var(--card-gap);
+    }
+
+    &__gallery {
+        border-top-left-radius: var(--border-radius);
+        border-top-right-radius: var(--border-radius);
+        text-align: center;
+        overflow: hidden;
+        min-width: 0;
+        width: 100%;
+
+        &.swiper {
+            --swiper-theme-color: var(--color-primary);
+            --swiper-pagination-bottom: 0;
+
+            & .swiper-pagination {
+                transform: translateY(100%);
+            }
+            // --swiper-pagination-bottom: 5px;
+            // --swiper-pagination-bullet-width: unset;
+            // --swiper-pagination-bullet-border-radius: 2px;
+            // --swiper-pagination-bullet-height: 5px;
+
+            // .swiper-pagination {
+            //     display: flex;
+            //     opacity: 0;
+
+            //     &-bullet {
+            //         position: relative;
+            //         flex-grow: 1;
+
+            //         &::after {
+            //             content: "";
+            //             position: absolute;
+            //             bottom: 50%;
+            //             left: 0;
+            //             width: 100%;
+            //             height: calc(var(--swiper-pagination-bullet-height) * 3);
+            //             background: transparent;
+            //             transform: translateY(50%);
+            //         }
+            //     }
+            // }
+
+            // &:hover {
+            //     .swiper-pagination {
+            //         opacity: 1;
+            //     }
+            // }
+        }
+        & .swiper-wrapper {
+            cursor: pointer;
+        }
+    }
+
+    .button {
+        width: 100%;
+    }
+}

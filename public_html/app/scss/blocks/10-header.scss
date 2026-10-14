@@ -1,0 +1,122 @@
+.header {
+    padding: 1.5rem 0;
+    
+    @media (max-width: 1199px) {
+        // display: none;
+        border-bottom: 1px solid var(--color-border);
+    }
+}
+
+.header-grid {
+    display: grid;
+    grid-template-columns: auto 1fr auto auto auto;
+    column-gap: 1.5rem;
+    align-items: center;
+
+    @media (max-width: 1199px) {
+        grid-template-columns: 1fr repeat(3, auto);
+    }
+    @media (max-width: 991px) {
+        row-gap: var(--grid-gap);
+        grid-template-columns: repeat(3, auto);
+    }
+    @media (max-width: 767px) {
+        grid-template-columns: repeat(2, auto);
+    }
+    @media (max-width: 575px) {
+        grid-template-columns: 1fr;
+        justify-items: center;
+    }
+}
+
+.header-logo {
+    @media (max-width: 1199px) {
+        display: none;
+    }
+}
+
+.header-search {
+    position: relative;
+    min-width: 190px;
+
+    @media (max-width: 991px) {
+        grid-column: span 3;
+    }
+    @media (max-width: 767px) {
+        grid-column: span 1;
+    }
+
+    .input {
+        height: 2.5rem;
+        padding-right: 3rem;
+        background-color: #fff;
+    }
+
+    button {
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        right: 0;
+        width: 3rem;
+        color: var(--color-text-muted);
+
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        & svg {
+            max-width: 20px;
+        }
+    }
+
+    /* яндекс поиск */
+    .ya-site-form__input-text {
+        padding: 0 3rem 0 20px !important;
+        height: 2.5rem !important;
+        border: 1px solid var(--color-border) !important;
+        transition: all 0.2s !important;
+        border-radius: var(--border-radius) !important;
+        &:focus {
+            border: 1px solid var(--color-primary) !important;
+            box-shadow: 0 0 0 4px rgba(var(--color-primary-rgb), 0.2) !important;
+        }
+    }
+    .ya-page_js_yes .ya-site-form_inited_no { display: none; }
+    .ya-site-form__submit {
+        display: none !important;
+    }
+    #ya-site-form0 .ya-site-form__form * {
+        font-size: 1rem !important;
+    }
+    #ya-site-form0 .ya-site-form__search-input {
+        padding: 0 !important;
+    }
+    #ya-site-form0 .ya-site-suggest-elem:hover {
+        background-color: var(--color-bg-light) !important;
+    }
+}
+
+.header-contacts {
+    display: flex;
+    align-items: center;
+    svg {
+        margin-right: 0.75rem;
+    }
+}
+
+.header-soc {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 -0.5rem;
+    img, svg  {
+        width: auto;
+        height: 1.5rem;
+    }
+    a {
+        padding: 0.5rem;
+        &:hover {
+            color: var(--color-primary);
+        }
+    }
+}

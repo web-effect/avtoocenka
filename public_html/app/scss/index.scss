@@ -1,0 +1,40 @@
+@import 'tools',
+'vars',
+'reset',
+'main',
+'typography',
+'layout',
+'components';
+
+@import 'form/checks';
+@import 'form/inputs';
+@import 'form/layout';
+
+@import 'elements/breadcrumb';
+@import 'elements/button';
+//@import 'elements/card';
+@import 'elements/message';
+@import 'elements/pagination';
+//@import 'elements/prod';
+//@import 'elements/prod-card';
+@import 'elements/tabs';
+@import 'elements/carusel';
+//@import 'elements/cart-popup';
+
+@import 'blocks/10-header';
+@import 'blocks/11-navbar';
+@import 'blocks/20-footer';
+
+@import 'pages/block';
+@import 'pages/replenishment';
+@import 'pages/mobile';
+@import 'pages/header-mobile';
+@import 'pages/instruction';
+@import 'pages/appraiser';
+@import 'pages/report';
+@import 'pages/reports';
+@import 'pages/content';
+@import 'pages/main';
+//@import 'pages/valuation';
+
+@import 'helpers';

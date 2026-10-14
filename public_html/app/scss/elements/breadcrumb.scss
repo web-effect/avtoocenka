@@ -1,0 +1,22 @@
+.breadcrumb {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: start;
+    margin-bottom: -0.5em;
+    padding-top: 1.5rem;
+    padding-bottom: 1.5rem;
+    line-height: 1.2;
+    font-size: 0.875rem;
+
+    li {
+        display: flex;
+        align-items: center;
+        margin-bottom: 0.5em;
+
+        &:not(:last-child)::after {
+            content: "/";
+            margin: -0.2em 0.5rem 0;
+            color: var(--color-border);
+        }
+    }
+}

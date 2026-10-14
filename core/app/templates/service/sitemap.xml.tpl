@@ -1,0 +1,1 @@
+{'GoogleSiteMap'|snippet:['showHidden' => 1, 'limit' => 100000]}

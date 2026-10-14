@@ -1,0 +1,11 @@
+/* Форма связи */
+
+.b-form {
+    &__image {
+        text-align: center;
+
+        @media (max-width: 991px) {
+            display: none;
+        }
+    }
+}

@@ -1,0 +1,20 @@
+html {
+    body {
+        .bvi-panel {
+            .bvi-link-copy {
+                display: none !important;
+            }
+        }
+        .bvi-body {
+            .header__logo {
+                img {
+                    background-color: #000 !important;
+                }
+            }
+
+            .b-reviews__decor {
+                display: none;
+            }
+        }
+    }
+}

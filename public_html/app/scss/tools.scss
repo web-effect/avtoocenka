@@ -1,0 +1,11 @@
+@mixin makeResponsive($className, $property, $value) {
+    @each $br, $settings in $breakpoints {
+        $min-width: map-get($settings, min);
+
+        @media (min-width: #{$min-width}) {
+            .#{$br}\:#{$className} {
+                #{$property}: #{$value};
+            }
+        }
+    }
+}

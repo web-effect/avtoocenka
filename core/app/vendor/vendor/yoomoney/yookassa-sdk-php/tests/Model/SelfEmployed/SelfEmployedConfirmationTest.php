@@ -1,0 +1,68 @@
+<?php
+
+/*
+ * The MIT License
+ *
+ * Copyright (c) 2026 "YooMoney", NBСO LLC
+ *
+ * Permission is hereby granted, free of charge, to any person obtaining a copy
+ * of this software and associated documentation files (the "Software"), to deal
+ * in the Software without restriction, including without limitation the rights
+ * to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+ * copies of the Software, and to permit persons to whom the Software is
+ * furnished to do so, subject to the following conditions:
+ *
+ * The above copyright notice and this permission notice shall be included in
+ * all copies or substantial portions of the Software.
+ *
+ * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+ * IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+ * FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+ * AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+ * LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+ * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
+ * THE SOFTWARE.
+ */
+
+namespace Tests\YooKassa\Model\SelfEmployed;
+
+use PHPUnit\Framework\TestCase;
+use YooKassa\Model\SelfEmployed\SelfEmployedConfirmation;
+use YooKassa\Model\SelfEmployed\SelfEmployedConfirmationType;
+
+class SelfEmployedConfirmationTest extends TestCase
+{
+    /**
+     * @dataProvider validDataProvider
+     */
+    public function testGetSetType($value)
+    {
+        $instance = new SelfEmployedConfirmation();
+        self::assertNull($instance->getType());
+        self::assertNull($instance->type);
+
+        $instance->fromArray(array('type' => $value));
+        self::assertSame($value, $instance->getType());
+        self::assertSame($value, $instance->type);
+    }
+
+    /**
+     * @dataProvider validDataProvider
+     */
+    public function testFromArray($value)
+    {
+        $instance = new SelfEmployedConfirmation();
+        $instance->fromArray(array('type' => $value));
+        self::assertSame($value, $instance->getType());
+        self::assertSame($value, $instance->type);
+    }
+
+    public function validDataProvider()
+    {
+        $result = array();
+        foreach (SelfEmployedConfirmationType::getValidValues() as $value) {
+            $result[] = array($value);
+        }
+        return $result;
+    }
+}

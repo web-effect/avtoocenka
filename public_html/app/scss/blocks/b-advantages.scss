@@ -1,0 +1,30 @@
+/* Преимущества */
+
+
+
+.b-advantages__item {
+    text-align: center;
+}
+
+.b-advantages__item-image {
+    color: var(--color-primary);
+
+    img,
+    svg {
+        width: auto;
+        height: 90px;
+
+        @media (min-width: 576px) {
+            height: 120px;
+        }
+    }
+}
+
+.b-advantages__item-title {
+    margin: 1rem auto 0;
+    max-width: 260px;
+}
+
+.b-advantages__item-description {
+    margin-top: 0.75rem;
+}

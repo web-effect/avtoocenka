@@ -1,0 +1,31 @@
+.b-text-media {
+    &__items {
+        display: flex;
+        align-items: center;
+        gap: var(--grid-gap);
+
+        &.is-inverted {
+            .b-text-media__image {
+                order: -1;
+            }
+        }
+
+        @media (max-width: 991px) {
+            flex-direction: column;
+        }
+    }
+
+    &__text {
+        flex-grow: 1;
+    }
+
+    &__image {
+        @media (min-width: 992px) {
+            flex: 1 0 40%;
+        }
+
+        img {
+            border-radius: var(--border-radius);
+        }
+    }
+}

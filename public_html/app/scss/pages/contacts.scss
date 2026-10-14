@@ -1,0 +1,24 @@
+
+.p-contacts .columns {
+    position: relative;
+    --gap: 3rem;
+
+    // @include desktop {
+    //     grid-template-columns: 1fr 430px;
+    // }
+}
+
+.p-contacts .form-box {
+    margin-top: 1.5rem;
+    position: sticky;
+    top: calc(var(--havbar-height-root, 3rem) + 1.5rem);
+    align-self: flex-start;
+
+    // @include desktop {
+    //     margin-top: -44px - 29px - 26px;
+    // }
+}
+
+.p-contacts .ya-map {
+    margin-top: 3rem;
+}

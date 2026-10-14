@@ -1,0 +1,110 @@
+@function toRGB($color) {
+    @return +red($color)+", "+green($color)+", "+blue($color);
+}
+
+/* Контейнеры */
+// $breakpoints: (
+//     (sm, 576px, 516px),
+//     (md, 768px, 696px),
+//     (lg, 992px, 936px),
+//     (xl, 1200px, 1116px),
+//     (xxl, 1400px, 1316px),
+//     (xxxl, 1600px, 1440px)
+// );
+
+$breakpoints: (
+    sm: (min: 576px, container: 516px),
+    md: (min: 768px, container: 696px),
+    lg: (min: 992px, container: 936px),
+    xl: (min: 1200px, container: 1116px),
+    xxl: (min: 1400px, container: 1316px),
+    xxxl: (min: 1600px, container: 1440px),
+);
+
+
+/* Цвета */
+$colors: (
+    "primary": #C3986B,
+    "text": #151B2B,
+    "bg": #ffffff,
+    "black": #151B2B,
+    "light": #F8F6F2,
+    "muted" : #5B6375,
+    "border": #EEEAE5,
+    "success": #2C6E49,
+    "danger": #c25050,
+    "warning": #DC8A2E,
+);
+
+
+:root {
+    @each $name, $val in $colors {
+        --color-#{$name}: #{$val};
+        --color-#{$name}-rgb: #{toRGB($val)};
+    }
+}
+
+/* Типографика */
+:root {
+    --font-family: Manrope, sans-serif;
+    --font-weight: 400;
+    --font-weight-bolder: 600;
+    --font-bolder: 600;
+    --font-title-family: Manrope, sans-serif;
+    --font-title-weight: 600;
+    --content-text-align: justify;
+}
+
+/* Прочее */
+:root {
+    --section-padding: 3rem;
+    --section-header-margin: 1.5rem;
+    --havbar-height-root: 3rem;
+    --grid-gap: 0.75rem;
+    --border-radius: 6px;
+    --shadow: 0 0.5em 1em -0.125em rgb(10 10 10 / 10%), 0 0 0 1px rgb(10 10 10 / 2%);
+    --shadow-hover: 0 0.5em 1em -0.125em rgb(10 10 10 / 30%), 0 0 0 1px rgb(10 10 10 / 5%);
+    /*--box-shadow: 0px 1.7px 5.7px rgba(0, 0, 0, 0.024),
+                  0px 5.6px 19px rgba(0, 0, 0, 0.036),
+                  0px 25px 85px rgba(0, 0, 0, 0.06);*/
+    --box-shadow: 0px 0px 9px 5px rgba(34, 60, 80, 0.1);             
+    --columns: 2;
+
+
+    @media (min-width: 768px) {
+        --grid-gap: 1.25rem;
+        --section-header-margin: 2rem;
+        --border-radius: 12px;
+    }
+
+    @media (min-width: 992px) {
+        --columns: 4;
+        --grid-gap: 1.5rem;
+        --section-padding: 4.5rem;
+        --section-header-margin: 2.25rem;
+    }
+
+    @media (min-width: 1200px) {
+        --grid-gap: 2rem;
+    }
+}
+
+
+// CSS переменные Swiper
+.swiper {
+    --swiper-theme-color: var(--color-primary);
+
+    --swiper-navigation-size: 1.5em;
+    --swiper-navigation-top-offset: 50%;
+    --swiper-navigation-sides-offset: calc(1.75 * var(--swiper-navigation-size) * -0.5);
+    --swiper-navigation-color: var(--color-primary);
+    --swiper-navigation-bg-arrow: '';
+
+    --swiper-pagination-bullet-horizontal-gap: 4px;
+    --swiper-pagination-bullet-size: 10px;
+    --swiper-pagination-bullet-width: 10px;
+    --swiper-pagination-bullet-height: 10px;
+    --swiper-pagination-bullet-border-radius: 50%;
+    --swiper-pagination-bullet-opacity: 1;
+    --swiper-pagination-color: var(--color-primary);
+}
